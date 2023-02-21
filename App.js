@@ -6,21 +6,18 @@ const Drawer = createDrawerNavigator();
 import DrawerNavigator from "./Screens/navigation/DrawerNavigator";
 import Parameter from './Sample/Parameter';
 
-import { useSelector, useDispatch, Provider } from 'react-redux';
-import { combineReducers } from 'redux';
+//import { useSelector, useDispatch, Provider } from 'react-redux';
+//import { combineReducers } from 'redux';
 
 export default function App() {
-  const mystate = useSelector((state) => state.change);
-    const dispatch = useDispatch();
+  //const mystate = useSelector((state) => state.change);
+  //const dispatch = useDispatch();
   return (<>
-    <Provider>
+    {/* <Provider>
       <View style={{ alignContent: 'center', alignItems: 'center', flex: 3, backgroundColor: '#2ff155' }}>
         <Parameter name="Ya Ali" />
       </View>
-    </Provider>
-    <View style={{ flex: 1, backgroundColor: "#efeaad" }}>
-      <Text> App </Text>
-    </View>
+     </Provider> */}
      <NavigationContainer>
        <DrawerNavigator />
      </NavigationContainer>
