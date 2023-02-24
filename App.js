@@ -4,8 +4,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 const Drawer = createDrawerNavigator();
 
 import DrawerNavigator from "./Screens/navigation/DrawerNavigator";
-import Parameter from './Sample/Parameter';
 
+//import { Provider } from 'react-redux';
+//import { createStore } from 'redux';
+//import productReducer from './store/reducers/productReducer';
+//const store = createStore(productReducer);
 //import { useSelector, useDispatch, Provider } from 'react-redux';
 //import { combineReducers } from 'redux';
 
@@ -17,11 +20,13 @@ export default function App() {
       <View style={{ alignContent: 'center', alignItems: 'center', flex: 3, backgroundColor: '#2ff155' }}>
         <Parameter name="Ya Ali" />
       </View>
+    <Provider store={store}>
      </Provider> */}
-     <NavigationContainer>
-       <DrawerNavigator />
-     </NavigationContainer>
-    <StatusBar style="auto" />
+      <NavigationContainer>
+        <DrawerNavigator />
+      </NavigationContainer>
+      <StatusBar style="auto" />
+    {/* </Provider> */}
   </>);
 }
 
