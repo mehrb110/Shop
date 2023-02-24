@@ -5,12 +5,15 @@ const Drawer = createDrawerNavigator();
 
 import DrawerNavigator from "./Screens/navigation/DrawerNavigator";
 
-//import { Provider } from 'react-redux';
-//import { createStore } from 'redux';
-//import productReducer from './store/reducers/productReducer';
-//const store = createStore(productReducer);
-//import { useSelector, useDispatch, Provider } from 'react-redux';
-//import { combineReducers } from 'redux';
+import TodoApp from './Screens/TodoApp';
+
+// redux
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import rootReducer from './redux/reducers'
+const store = configureStore({
+  reducer: rootReducer
+})
 
 export default function App() {
   //const mystate = useSelector((state) => state.change);
@@ -20,13 +23,13 @@ export default function App() {
       <View style={{ alignContent: 'center', alignItems: 'center', flex: 3, backgroundColor: '#2ff155' }}>
         <Parameter name="Ya Ali" />
       </View>
+    </Provider> */}
     <Provider store={store}>
-     </Provider> */}
       <NavigationContainer>
         <DrawerNavigator />
       </NavigationContainer>
       <StatusBar style="auto" />
-    {/* </Provider> */}
+    </Provider>
   </>);
 }
 

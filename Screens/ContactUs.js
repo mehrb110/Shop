@@ -1,11 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { FontAwesome as Icon } from '@expo/vector-icons';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import TodoApp from './TodoApp';
 
 export default function ContactUs() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>
-        ContactUs-=  test redux 
+        ContactUs-=  test redux Toolkit -&nbsp;<Icon name="tasks" size={24} color="black" />
       </Text>
+      <TodoApp/>
     </View>
   );
 }
