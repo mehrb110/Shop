@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 
 const Spacer = () => {
   return (
@@ -8,7 +8,7 @@ const Spacer = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 15,
+    marginVertical: 10,
   }
 })
 

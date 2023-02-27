@@ -1,5 +1,6 @@
 import { FontAwesome as Icon } from '@expo/vector-icons';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import BasketApp from './BasketApp';
 import TodoApp from './TodoApp';
 
 export default function ContactUs() {

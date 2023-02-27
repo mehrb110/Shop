@@ -5,12 +5,11 @@ const Drawer = createDrawerNavigator();
 
 import DrawerNavigator from "./Screens/navigation/DrawerNavigator";
 
-import TodoApp from './Screens/TodoApp';
-
 // redux
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import rootReducer from './redux/reducers'
+import TodoApp from './Screens/TodoApp';
 const store = configureStore({
   reducer: rootReducer
 })
@@ -29,6 +28,7 @@ export default function App() {
         <DrawerNavigator />
       </NavigationContainer>
       <StatusBar style="auto" />
+      <TodoApp />
     </Provider>
   </>);
 }

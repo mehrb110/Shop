@@ -10,23 +10,24 @@ import { Title, Paragraph, Card, Button, TextInput } from 'react-native-paper';
 import { FontAwesome as Icon } from '@expo/vector-icons';
 
 import { connect } from 'react-redux';
-import { addTodo, deleteTodo } from '../redux/todoSlice';
-import React from 'react';
+import { addTodo, addFactorItem, deleteTodo } from '../redux/todoSlice';
+import React,{useState} from 'react';
 
 // const data = [
 //   {id: 1, task: "Do this stuff"},
 //   {id: 2, task: "Do another stuff"},
 // ]
 
-const TodoApp = ({ todos_list, addTodo, deleteTodo, ...props }) => {
-  const [task, setTask] = React.useState('');
+function TodoApp({ todos_list, addTodo, addFactorItem, deleteTodo, ...props }) {
+  const [task, setTask] = useState('');
+  const [factorItem, setFactorItem,] = useState('');
 
   const handleAddTodo = () => {
-    console.warn('gggg');
+    console.warn('handleAddTodo: ');
     console.log({ task });
-    addTodo({ task })
-    setTask('')
-  }
+    addTodo({ task });
+    setTask('');
+  };
 
   return (
     <View style={styles.container}>
@@ -42,8 +43,7 @@ const TodoApp = ({ todos_list, addTodo, deleteTodo, ...props }) => {
             mode="outlined"
             label="Task"
             value={task}
-            onChangeText={task => setTask(task)}
-          />
+            onChangeText={task => setTask(task)} />
           <Spacer />
           <Button mode="contained" onPress={handleAddTodo}>
             Add Task CC
@@ -60,8 +60,8 @@ const TodoApp = ({ todos_list, addTodo, deleteTodo, ...props }) => {
               <Card>
                 <Card.Title title={`Task#${item.id}`}
                   left={(props) => <Icon name="tasks" size={24} color="black" />}
-                  right={(props) => <ButtonIcon iconName="close" color="red" onPress={() => deleteTodo(item.id)} />}
-                />
+                  right={(props) => <ButtonIcon iconName="close" color="red" onPress={() => addFactorItem({"factorItem": "test redux"})} />}
+                  center={(props) => <ButtonIcon iconName="close" color="blue" onPress={() => deleteTodo(item.id)} />} />
                 <Card.Content>
                   <Paragraph>{item.task}</Paragraph>
                 </Card.Content>
@@ -69,8 +69,7 @@ const TodoApp = ({ todos_list, addTodo, deleteTodo, ...props }) => {
               <Spacer />
             </>
           );
-        }}
-      />
+        } } />
       <Spacer />
     </View>
   );
@@ -92,7 +91,10 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state, myOwnProps) => {
-  console.log(state.todos.todos_list)
+  console.log('mapStateToProps todo: ');
+  console.log(state);
+  console.log(state.todos.todos_list);
+  console.log(state.todos.factorItem);
   return {
     todos_list: state.todos.todos_list,
   }
@@ -101,6 +103,7 @@ const mapStateToProps = (state, myOwnProps) => {
 const mapDispatchToProps = {
   // ... normally is an object full of action creators
   addTodo,
+  addFactorItem,
   deleteTodo,
 }
 
