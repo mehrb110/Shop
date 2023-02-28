@@ -10,6 +10,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import rootReducer from './redux/reducers'
 import TodoApp from './Screens/TodoApp';
+import BasketApp from './Screens/BasketApp';
 const store = configureStore({
   reducer: rootReducer
 })
@@ -28,7 +29,7 @@ export default function App() {
         <DrawerNavigator />
       </NavigationContainer>
       <StatusBar style="auto" />
-      <TodoApp />
+      {/* <TodoApp /> */}
     </Provider>
   </>);
 }

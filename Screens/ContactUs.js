@@ -9,7 +9,8 @@ export default function ContactUs() {
       <Text>
         ContactUs-=  test redux Toolkit -&nbsp;<Icon name="tasks" size={24} color="black" />
       </Text>
-      <TodoApp/>
+      {/* <TodoApp/> */}
+      <BasketApp />
     </View>
   );
 }

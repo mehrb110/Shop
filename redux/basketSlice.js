@@ -6,9 +6,10 @@ export const basketSlice = createSlice({
         basketList: [],
     },
     reducers: {
-        addBasket: (state, action) => {
-            console.warn('state action addBasket:');
+        addBasketItem: (state, action) => {
+            console.warn('state addBasketItem:');
             console.warn(state);
+            console.warn('action addBasketItem:');
             console.warn(action);
             state.basketList = [...state.basketList, { rdf: rdf++, basket: action.payload.basket }];
         },
@@ -17,6 +18,6 @@ export const basketSlice = createSlice({
         },
     }
 });
-export const { addBasket, deleteBasket } = basketSlice.actions;
+export const { addBasketItem, deleteBasket } = basketSlice.actions;
 export const selectBaskets = state => state.basketList;
 export default basketSlice.reducer;
