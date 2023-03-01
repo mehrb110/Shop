@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Basket from "../Basket";
+//import Test from "../Test";
 import { MainStackNavigator } from "./StackNavigator";
 
 const Tab = createBottomTabNavigator();
@@ -30,6 +31,7 @@ const TabNavigator = () => {
         inactiveTintColor: 'gray',
       })}>
       <Tab.Screen name="MainStackNavigator" component={MainStackNavigator} options={{ tabBarLabel: 'ویترین', headerShown: false, headerTitle: 'ویترین' }} />
+      {/* <Tab.Screen name="Test" component={Test} options={{ tabBarLabel: 'تست', headerTitle: 'تست', headerStyle: { backgroundColor: '#cdf9ea' }, headerTitleStyle: { color: '#225599' } }} /> */}
       <Tab.Screen name="Basket" component={Basket} options={{ tabBarLabel: 'سبد خرید', headerTitle: 'سبد خرید', headerStyle: { backgroundColor: '#cdf9ea' }, headerTitleStyle: { color: '#225599' } }} />
     </Tab.Navigator>
   );
